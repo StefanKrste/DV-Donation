@@ -19,7 +19,7 @@ const ListElement = ({ addressTo,addressFrom, timestamp, message, name, amount})
 const List = () => {
     const { transactions, getAllTransactions } = useContext(TransactionContext);
     const filterTransactions = transactions.reverse().filter(transaction => transaction.addressTo===donationAddress);
-    const Status = (filterTransactions.reduce((total, currentValue) => total = total + currentValue.amount, 0)).toFixed(4);
+    const Status = (filterTransactions.reduce((total, currentValue) => total + currentValue.amount, 0)).toFixed(4);
 
     useEffect(() => {
         getAllTransactions();
