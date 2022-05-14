@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Axios from 'axios'
-import OpenDonation from './OpenDonation'
+import { useNavigate } from 'react-router-dom'
+import ConfirmDialog from './ConfirmDialog'
 
 function ListAllDonations() {
   const [donationList, setDonationList] = useState([])
@@ -24,18 +25,28 @@ function ListAllDonations() {
     window.location.reload()
   }
 
+  const navigate = useNavigate()
+
   return (
     <div>
       {donationList.map((val) => {
         return (
-          <div key={val.id}>
-            <h2>{val.ime_donacija}</h2>
-            {val.slika != null && <img alt='Embedded Image' src={`data:image;base64,${val.slika}`} />}
-            <p style={{ width: '50ch', whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
-              {val.opis_donacija}</p>
-            {val.potvrda_admin == 0 && <button
-              onClick={() => { addDonation(val.id) }}>Add donation</button>}
-            <button onClick={() => { deleteDonation(val.id) }}>Delete donation</button>
+          <div key={val.id} >
+            <div onClick={() => {
+              navigate(`/${val.id}`)
+            }}>
+              <h2>{val.ime_donacija}</h2>
+              {val.slika != null && <img alt='Embedded Image' src={`data:image;base64,${val.slika}`} />}
+              <p style={{ width: '50ch', whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
+                {val.opis_donacija}</p>
+              </div>
+
+              <div>
+              {val.potvrda_admin == 0 && <button
+                onClick={() => { addDonation(val.id) }}>Add donation</button>}
+              <button onClick={() => { deleteDonation(val.id) }}>Delete donation</button>
+              {/* <button onClick={() => { <ConfirmDialog showDialog={true}/> }}>Delete donation</button> */}
+            </div>
           </div>
         )
       })}

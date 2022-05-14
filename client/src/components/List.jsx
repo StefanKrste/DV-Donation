@@ -1,7 +1,7 @@
 import React, {useContext, useState, useEffect} from "react";
 
 import { TransactionContext } from "../context/TransactionContext";
-import { donationAddress, Goal } from "../utils/constants";
+import { donationAddress } from "../utils/constants";
 
 const ListElement = ({ addressTo,addressFrom, timestamp, message, name, amount}) => {
     return (
@@ -16,7 +16,7 @@ const ListElement = ({ addressTo,addressFrom, timestamp, message, name, amount})
     );
 };
 
-const List = () => {
+const List = ( {goal} ) => {
     const { transactions, getAllTransactions } = useContext(TransactionContext);
     const filterTransactions = transactions.reverse().filter(transaction => transaction.addressTo===donationAddress);
     const Status = (filterTransactions.reduce((total, currentValue) => total + currentValue.amount, 0)).toFixed(4);
@@ -27,7 +27,7 @@ const List = () => {
 
     return (
         <div>
-            <p onClick={getAllTransactions}>Оur goal: {Status}/{Goal} ETH</p>
+            <p onClick={getAllTransactions}>Оur goal: {Status}/{goal} ETH</p>
             <p>All transactions</p>
             {filterTransactions.map((transaction, i) => (
                 <ListElement key={i} {...transaction} />

@@ -32,6 +32,14 @@ app.get("/donation/getAll", (req, res) => {
     });
 });
 
+app.get("/donation/getDonation/:id", (req, res) => {
+    const id = req.params.id;
+    const sqlSelect = "SELECT * FROM donacija WHERE id = ?";
+    db.query(sqlSelect, id, (err, result) => {
+        res.send(result);
+    });
+});
+
 app.get("/donation/getMyDonations/:currentAccount", (req, res) => {
     const acc = req.params.currentAccount;
     const sqlSelect = "SELECT * FROM donacija WHERE adresa = ? ORDER BY potvrda_admin ASC";

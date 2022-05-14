@@ -1,25 +1,39 @@
-import React from 'react'
-import { TransactionContext } from "../context/TransactionContext";
-import ListAciveDonations from "./ListActiveDonations";
-import ListAllDonations from "./ListAllDonations";
-import { useContext } from "react";
-import Home from './Home';
+import React, { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+import  Axios  from 'axios'
+import Inputs from './Inputs'
+import List from './List'
 
-function OpenDonation({ donation }) {
 
-  const AdminId = 0x59b035bdd806594541650ce9b8798019c127cbb1;
+function OpenDonation() {
+  const [donation, setDonation] = useState([])
 
-    const {
-        currentAccount,
-      } = useContext(TransactionContext);
+  const {id} = useParams()
+
+  useEffect( () => {
+    Axios.get(`http://localhost:3001/donation/getDonation/${id}`).then((response) => {
+      setDonation(response.data)
+      
+    })
+  }, [])
+
   return (
     <div>
-      <Home/>
-        {window.location.href == "http://localhost:3000/" && 
-      <>
-      {AdminId == currentAccount ? <ListAllDonations/> : <ListAciveDonations/>}
-      </>
-      }
+      {donation.map((val) => {
+        return(
+          <div key={val.id}>
+          <h1>{val.ime_donacija}</h1>
+          {val.slika != null && <img alt='Embedded Image' src={`data:image;base64,${val.slika}`} />}
+          <p>{val.opis_donacija}</p>
+          <p>{val.email}</p>
+
+          <Inputs/>
+          <List goal={val.goal}/>
+
+          </div>
+        )
+      })}
+      
 
     </div>
   )

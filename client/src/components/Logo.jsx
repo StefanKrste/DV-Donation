@@ -1,7 +1,8 @@
 import React, { useContext} from 'react';
 import {TransactionContext} from "../context/TransactionContext";
+import { Link, Outlet } from "react-router-dom";
 
-const Logo = ( {clickAddDonation} ) => {
+const Logo = () => {
 
     const {
         currentAccount,
@@ -10,12 +11,17 @@ const Logo = ( {clickAddDonation} ) => {
 
     return (
         <div>
-        <img src="../src/eth.png" height={100} width={100}/>
-        {!currentAccount ? (<button type="button" 
-            onClick={connectWallet}>
-                Connect with MetaMask</button>)
+            <img src="../src/eth.png" height={100} width={100}/>
+            <Link to="/">Home</Link>
+            {currentAccount && <Link to="/myDonations">My donations</Link>}
+            {currentAccount && <Link to="/addDonation">Add donation</Link>}
+            {!currentAccount ? (<button type="button" 
+            onClick={connectWallet}>Connect with MetaMask</button>)
             : (<label>{currentAccount}</label>)}
+            <Outlet/>
         </div>
+
+       
     );
 }
 
