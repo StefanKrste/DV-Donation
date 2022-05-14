@@ -1,13 +1,26 @@
-import {Logo,List,Inputs} from "./components";
-import React from 'react';
+import {Logo} from "./components";
+import AddDonation from "./components/AddDonation";
+import React, { useState } from 'react';
+import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
+import Home from "./components/Home";
+import MyDonations from "./components/MyDonations";
+import OpenDonation from "./components/OpenDonation";
+
+
 
 const App = () => {
   return (
-    <div className="App">
-        <Logo></Logo>
-        <Inputs></Inputs>
-        <List></List>
-    </div>
+    <Router>
+      <div className="App">
+          <Logo />
+          <Routes>
+            <Route path="/" element={<OpenDonation/>}>
+              <Route path="addDonation" element={<AddDonation/>}/>
+              <Route path="myDonations" element={<MyDonations/>}/>
+            </Route>
+          </Routes>
+      </div>
+    </Router>
   )
 }
 

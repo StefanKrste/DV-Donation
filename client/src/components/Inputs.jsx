@@ -9,7 +9,6 @@ const Inputs = () => {
 
     const {
         currentAccount,
-        connectWallet,
         sendTransaction,
         isLoading
     } = useContext(TransactionContext);
@@ -45,8 +44,6 @@ const Inputs = () => {
 
     return (
         <div>
-            {!currentAccount && (<button type="button" onClick={connectWallet}>Connect with MetaMask</button>)}
-            {currentAccount && (<label>{currentAccount}</label>)}
             <input placeholder="Amount of (ETH)" step="0.0001" name="amount" type="number" onChange={handleInputChange}/>
             <label name="amountUSD">${AmountUSD} USD</label>
             <input placeholder="Name or nickname" name="name" type="text" onChange={handleInputChange}/>
