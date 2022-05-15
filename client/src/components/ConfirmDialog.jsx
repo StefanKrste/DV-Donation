@@ -1,24 +1,24 @@
 import React from 'react'
-// import '../ConfirmDialog.css'
+import DialogCSS from './ConfirmDialog.module.css'
 
-function ConfirmDialog( {showDialog} ) {
+function ConfirmDialog( {showDialog, title, description, cancelDialog, confirmDialog} ) {
 
     if(!showDialog) {
         return <></>
     }
   return (
     <div>
-        <div className='overlay'>
-            <div className='dialog'>
-                <div className='dialog__content'>
-                    <h2 className='dialog__title'>Delete</h2>
-                    <p className='dialog__description'>Are you sure</p>
+        <div className={DialogCSS.overlay}>
+            <div className={DialogCSS.dialog}>
+                <div className={DialogCSS.dialog__content}>
+                    <h2 className={DialogCSS.dialog__title}>{title}</h2>
+                    <p className={DialogCSS.dialog__description}>{description}</p>
                 </div>
 
                 <hr />
-                <div className='dialog_footer'>
-                    <button className='dialog__cancel'>Cancel</button>
-                    <button className='dialog__confirm'> Yes</button>
+                <div className={DialogCSS.dialog__footer}>
+                    <button className={DialogCSS.dialog__cancel} onClick={cancelDialog}>Cancel</button>
+                    <button className={DialogCSS.dialog__confirm} onClick={confirmDialog}> Yes, delete it</button>
 
                 </div>
 

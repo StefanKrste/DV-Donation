@@ -1,3 +1,4 @@
+import React from 'react'
 import {Logo} from "./components";
 import AddDonation from "./components/AddDonation";
 import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
