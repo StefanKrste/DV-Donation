@@ -16,7 +16,7 @@ const Logo = () => {
             {currentAccount && <Link to="/myDonations">My donations</Link>}
             {currentAccount && <Link to="/addDonation">Add donation</Link>}
             {!currentAccount ? (<button type="button" 
-            onClick={connectWallet}>Connect with MetaMask</button>)
+            onClick={connectWallet} className='m-3 btn btn-primary'>Connect with MetaMask</button>)
             : (<label>{currentAccount}</label>)}
             <Outlet/>
         </div>
