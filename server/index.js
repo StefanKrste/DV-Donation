@@ -79,8 +79,9 @@ app.post('/donation/insert', upload.single("image"), (req, res) => {
     db.query(sqlInsert, [donationName, donationDesc, email, donationGoal, donationImage, address], (err, result) => {
         console.log(result);
         if(err) console.log(err);
-        console.log(result);
     });
+
+    res.send("Success")
 
 });
 

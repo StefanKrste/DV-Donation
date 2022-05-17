@@ -13,7 +13,6 @@ function OpenDonation() {
   useEffect( () => {
     Axios.get(`http://localhost:3001/donation/getDonation/${id}`).then((response) => {
       setDonation(response.data)
-      
     })
   }, [])
 

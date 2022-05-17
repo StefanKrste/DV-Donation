@@ -26,7 +26,8 @@ function ListAciveDonations() {
             {currentAccount && navigate(`/${val.id}`)}
           }}>
             <h2>{val.ime_donacija}</h2>
-            {val.slika != null && <img alt='Embedded Image' src={`data:image;base64,${val.slika}`}/>}
+            {val.slika != null && <img alt='Embedded Image' src={`data:image;base64,${val.slika}`}
+            height="250px" width="250px"/>}
             <p style={{width: '50ch', whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis"}}>
               {val.opis_donacija}
             </p>
