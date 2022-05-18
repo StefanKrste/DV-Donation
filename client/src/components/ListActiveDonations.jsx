@@ -19,16 +19,16 @@ function ListAciveDonations() {
   } = useContext(TransactionContext);
    
   return (
-    <div >
+    <div className='paddinglista' >
       {donationList.map((val) => {
         return (
-          <div  key={val.id} onClick={() => {
+          <div className='gallery' key={val.id} onClick={() => {
             {currentAccount && navigate(`/${val.id}`)}
           }}>
-            <h2>{val.ime_donacija}</h2>
+            <h2 className='desc'>{val.ime_donacija}</h2>
             {val.slika != null && <img alt='Embedded Image' src={`data:image;base64,${val.slika}`}
             height="250px" width="250px"/>}
-            <p style={{width: '50ch', whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis"}}>
+            <p className='desc'>
               {val.opis_donacija}
             </p>
           </div>
