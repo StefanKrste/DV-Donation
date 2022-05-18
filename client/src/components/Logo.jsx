@@ -11,14 +11,14 @@ const Logo = () => {
 
     return (
         
-        <div style={{textAlign:'center'}}>
-            <img src="../src/eth.png" height={100} width={100} />
+        <div style={{textAlign:'center',margin:'1%'}}>
+            { <img src="../src/eth.png" height={50} width={50} /> }
             <Link to="/"  className='linkNavBar'>Home</Link>
             {currentAccount && <Link to="/myDonations" className='linkNavBar' >My donations</Link>}
             {currentAccount && <Link to="/addDonation" className='linkNavBar'>Add donation</Link>}
             {!currentAccount ? (<button type="button" 
-            onClick={connectWallet} className='button-85'>Connect with MetaMask</button>)
-            : (<label  style={{ color:'#b895fd'}}  >User:    {currentAccount}</label>)}
+            onClick={connectWallet} >Connect with MetaMask</button>)
+            : (<label   className='user' >User:    {currentAccount}</label>)}
             <Outlet/>
         </div>
        

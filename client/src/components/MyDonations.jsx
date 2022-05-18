@@ -55,6 +55,7 @@ function MyDonations() {
               <h2   className='desc' >{val.ime_donacija}</h2>
               {val.slika != null && <img className='img' alt='Embedded Image' src={`data:image;base64,${val.slika}`}
               height="250px" width="250px"/>}
+               <p className='prazno'></p>
               <p  className='desc'>
                 {val.opis_donacija}
               </p>

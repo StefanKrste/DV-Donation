@@ -45,46 +45,61 @@ const AddDonation = () => {
         }
 
   return (
-      <div>
-        <form onSubmit={submitFunc}>
-            <div>
+      <div style={{marginTop:'5%',marginLeft:'35%'}} className='gallery2'>
+        <form   onSubmit={submitFunc}>
+        
+        <div className="desc"><h2 >Create your donation</h2></div>
+        
+            <div className="donacija" >
                 <label>Name of donation</label>
-                <input type='text' name="name" required
+              <div>  <input  className='forma' type='text' name="name" required
+               
                 value={name} onChange={(e) => 
                 setName(e.target.value)}/>
+                </div>
             </div>
-
-            <div>
+           
+            
+            <div className="donacija">
                 <label>Description of the donation</label>
-                <input type='text' name="description" required
+                <div>
+                <input   type='text' name="description" className='forma' required
                 value={description} onChange={(e) => 
                     setDescription(e.target.value)}/>
             </div>
+            </div>
+           
 
-            <div>
+            <div className="donacija">
                 <label>E-mail address for contact</label>
-                <input type="email" name="email"required
+                <div>
+                <input className='forma' type="email" name="email"required
                 value={email} onChange={(e) => 
                     setEmail(e.target.value)}/>
+                    </div>
             </div>
-
-            <div>
+           
+            <div className="donacija">
                 <label>Goal in ETH</label>
-                <input type="number" name="goal" required
+                <div>
+                <input className='forma'  type="number" name="goal" required
                 value={goal} onChange={(e) => 
                     setGoal(e.target.value)}/>
             </div>
-
-            <div>
+            </div>
+            <div><p className="prazno"></p></div>
+            <div className="donacija">
                 <label>Upload image</label>
-                <input type="file" accept="image/*" name="image" required
+                <input style={{margin:'2px'}}  type="file" accept="image/*" name="image" required
                 onChange={(e) => {
                     const image = e.target.files[0]
                     setImage(image)
                     }}/>
             </div>
+            
 
-            <input type="submit" value="Submit donation"/>
+            <div><p className="prazno"></p></div>
+            <input  style={{margin:'2px'}} type="submit" value="Submit donation"/>
         </form>
 
         <label>{labelText}</label>

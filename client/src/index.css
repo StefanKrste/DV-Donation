@@ -1,4 +1,10 @@
 body {
+   background-image: url("slika2.jpg");
+  background-attachment: fixed;
+    background-size:cover; 
+ /* background-image: radial-gradient(circle,rgb(109, 45, 247),rgb(79, 0, 128),white); */
+
+
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -13,34 +19,50 @@ code {
 }
 
 .paddinglista{
-  
-  padding-left: 30mm;
-  padding-top: 30mm;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 2%;
+
+
 }
 .gallery {
+  background-color: rgba(255, 255, 255, 0.756);
 
-  margin: 5px;
-
+ border:2px solid rgba(255, 255, 255, 0);
+margin: 5px;
+padding: 2px;
   float: left;
   width: 450px;
-  height: 520px;
+  height: 550px;
 }
 
 .gallery:hover {
-  border: 1px solid rgb(130, 129, 197);
+  border: 1px solid rgb(124, 112, 193);
 }
 
-.img {
-
+.prazno 
+{
+  height: 20px;
+  
 }
 .desc {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 3; /* number of lines to show */
-          line-clamp: 2; 
+          line-clamp: 3; 
   -webkit-box-orient: vertical;
-  color: #523b98d6;
+  color: rgba(83, 82, 82, 0.816);
+
+}
+.desc2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* number of lines to show */
+          line-clamp: 4; 
+  -webkit-box-orient: vertical;
+  color: rgba(83, 82, 82, 0.816);
 
 }
 .status
@@ -56,8 +78,9 @@ code {
 }
 .linkNavBar
 {
+
   padding: 2mm;
-  color:#b895fd;
+  color:#fafafa;
   font-weight: 400;
  
   text-decoration: none;
@@ -65,15 +88,14 @@ code {
 .linkNavBar:hover
 {
   
-  color:#b895fd;
-  text-shadow: 0px 1px #b895fd;
+  color:#b5aaf5d7;
+  text-shadow: 0px 1px #aae0f5d7;
 
 
 }
 .linkNavBar:after{
   color:#a173fb;
 }
-
 
 .button {
   width: 40mm;
@@ -98,7 +120,7 @@ code {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(160, 137, 250, 0.723);
+  background-color: rgba(133, 106, 244, 0.807);
   border-radius: 10rem;
   z-index: -2;
 }
@@ -109,7 +131,7 @@ code {
   left: 0;
   width: 0%;
   height: 100%;
-  background-color: #4519ac8d;
+  background-color: #4519ac93;
   transition: all 0.3s;
   border-radius: 10rem;
   z-index: -1;
@@ -121,6 +143,38 @@ code {
   width: 100%;
 }
 
+.user
+{
+  padding: 2mm;
+  color:#fafafaba;
+  font-weight: 400;
+ 
 
+
+}
+.gallery2 {
+  background-color: rgba(255, 255, 255, 0.552);
+
+ border:2px solid rgba(255, 255, 255, 0);
+ margin: 5px;
+ padding: 2px;
+  width: 450px;
+  height: 450px;
+}
+.donacija {
+
+  color: rgba(83, 82, 82, 0.816);
+  float:left;
+
+}
+.forma
+{
+  background-color: rgba(255, 255, 255, 0.653);
+  padding: 2px;
+  border: 3px #373974;
+margin:2px;
+  width:435px;
+height: 30px;
+}
 
 

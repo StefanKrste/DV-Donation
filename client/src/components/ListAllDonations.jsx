@@ -62,11 +62,13 @@ function ListAllDonations() {
               <h2  className='desc'>{val.ime_donacija}</h2>
               {val.slika != null && <img alt='Embedded Image' src={`data:image;base64,${val.slika}`} 
               height="250px" width="250px"/>}
-              <p  className='desc'>
+              <p className='prazno'></p>
+              <p  className='desc2'>
                 {val.opis_donacija}</p>
               </div>
 
               <div>
+              
               {val.potvrda_admin == 0 && <button
                 onClick={() => { addDonation(val.id) }} className='button'>Add donation</button>}
               <button   className='button' onClick={() => { 

@@ -11,9 +11,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const App = () => {
   return (
     <Router>
-      <div className="App">
+      <div className="App" >
           <Routes>
-            <Route path="/" element={<Logo/>}>
+             < Route path="/" element={<Logo/>}>
               <Route path="/" element={<Home/>}/>
               <Route path="addDonation" element={<AddDonation/>}/>
               <Route path="myDonations" element={<MyDonations/>}/>
