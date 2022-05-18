@@ -99,12 +99,11 @@ const AddDonation = () => {
             
 
             <div><p className="prazno"></p></div>
-            <input  style={{margin:'2px'}} type="submit" value="Submit donation"/>
+            <button style={{margin:'2px'}} type="submit">Submit donation</button>
         </form>
 
-        <label>{labelText}</label>
+        <label className='m-3'>{labelText}</label>
       </div>
-    
   )
 }
 

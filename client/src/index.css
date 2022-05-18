@@ -22,15 +22,13 @@ code {
   margin-left: 5%;
   margin-right: 5%;
   margin-top: 2%;
-
-
 }
+
 .gallery {
   background-color: rgba(255, 255, 255, 0.756);
-
- border:2px solid rgba(255, 255, 255, 0);
-margin: 5px;
-padding: 2px;
+  border:2px solid rgba(255, 255, 255, 0);
+  margin: 5px;
+  padding: 2px;
   float: left;
   width: 450px;
   height: 550px;
@@ -43,8 +41,8 @@ padding: 2px;
 .prazno 
 {
   height: 20px;
-  
 }
+
 .desc {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -55,6 +53,7 @@ padding: 2px;
   color: rgba(83, 82, 82, 0.816);
 
 }
+
 .desc2 {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -65,6 +64,7 @@ padding: 2px;
   color: rgba(83, 82, 82, 0.816);
 
 }
+
 .status
 {
   overflow: hidden;
@@ -76,22 +76,18 @@ padding: 2px;
   color: #373974;
   
 }
+
 .linkNavBar
 {
-
   padding: 2mm;
   color:#fafafa;
   font-weight: 400;
- 
   text-decoration: none;
 }
 .linkNavBar:hover
 {
-  
   color:#b5aaf5d7;
   text-shadow: 0px 1px #aae0f5d7;
-
-
 }
 .linkNavBar:after{
   color:#a173fb;
@@ -102,17 +98,16 @@ padding: 2px;
   height: 10mm;
   border: 0cm;
   display: inline-block;
-  
   border-radius: 950px;
   color: #fff;
   text-transform: uppercase;
-  font-size:small;
-
+  font-size: small;
   transition: all 0.3s;
   position: relative;
   overflow: hidden;
   z-index: 1;
 }
+
 .button:after {
   content: "";
   position: absolute;
@@ -124,6 +119,7 @@ padding: 2px;
   border-radius: 10rem;
   z-index: -2;
 }
+
 .button:before {
   content: "";
   position: absolute;
@@ -136,6 +132,7 @@ padding: 2px;
   border-radius: 10rem;
   z-index: -1;
 }
+
 .button:hover {
   color: #fff;
 }
@@ -148,33 +145,29 @@ padding: 2px;
   padding: 2mm;
   color:#fafafaba;
   font-weight: 400;
- 
-
-
 }
 .gallery2 {
   background-color: rgba(255, 255, 255, 0.552);
-
- border:2px solid rgba(255, 255, 255, 0);
- margin: 5px;
- padding: 2px;
+  border:2px solid rgba(255, 255, 255, 0);
+  margin: 5px;
+  padding: 2px;
   width: 450px;
   height: 450px;
 }
-.donacija {
 
+.donacija {
   color: rgba(83, 82, 82, 0.816);
   float:left;
-
 }
+
 .forma
 {
   background-color: rgba(255, 255, 255, 0.653);
   padding: 2px;
   border: 3px #373974;
-margin:2px;
+  margin:2px;
   width:435px;
-height: 30px;
+  height: 30px;
 }
 
 
