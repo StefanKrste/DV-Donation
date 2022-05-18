@@ -2,14 +2,16 @@ The application is a platform on which donation actions can be started and donat
 
 # DV-Donation
 
+install Node.js https://nodejs.org/en/download/
+
 ..\DV-Donation\server><br />
   npm install nodemon<br />
-  For Start - npm run devStart<br />
+  Start - npm run devStart<br />
 
 ..\DV-Donation\client><br />
   npm install<br />
   npm install react-router-dom<br />
-  For Start - npm run dev<br />
+  Start - npm run dev<br />
 
 https://metamask.io/download/ - MetaMask
 1. Go to setting 
