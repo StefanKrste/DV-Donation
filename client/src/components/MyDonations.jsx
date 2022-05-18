@@ -40,7 +40,7 @@ function MyDonations() {
       }
 
   return (
-    <div>
+    <div className='paddinglista'>
        {showDialogWindow && <ConfirmDialog 
       showDialog={showDialogWindow} title={"Delete a donation?"}
       description={"Are you sure you want to delete this task?"}
@@ -48,28 +48,29 @@ function MyDonations() {
       confirmDialog={confirmDialog}/>}
         {donationList.map((val) => {
         return (
-          <div key={val.id}>
-            <div  onClick={() => {
+          <div   className='gallery'  key={val.id}  >
+            <div   onClick={() => {
               {currentAccount && navigate(`/${val.id}`)}
             }}>
-              <h2>{val.ime_donacija}</h2>
-              {val.slika != null && <img alt='Embedded Image' src={`data:image;base64,${val.slika}`}
+              <h2   className='desc' >{val.ime_donacija}</h2>
+              {val.slika != null && <img className='img' alt='Embedded Image' src={`data:image;base64,${val.slika}`}
               height="250px" width="250px"/>}
-              <p style={{width: '50ch', whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis"}}>
+              <p  className='desc'>
                 {val.opis_donacija}
               </p>
-              {<p><b>
+              {<p><b className='status'>
                   Status: {val.potvrda_admin == 1 ? "Confirmed" : "Waiting for confirmation"}
                   </b></p>}
-            </div>
+             
 
+            </div>
             <div>      
-              <button onClick={() => {
+              <button  className='button' onClick={() => {
                  setShowDialogWindow(true) 
                  setDeleteDonationId(val.id)
               }}>Delete donation</button>
             </div>
-
+            
           </div>
         ) 
       })}

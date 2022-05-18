@@ -19,10 +19,10 @@ function ListAciveDonations() {
   } = useContext(TransactionContext);
    
   return (
-    <div>
+    <div >
       {donationList.map((val) => {
         return (
-          <div key={val.id} onClick={() => {
+          <div  key={val.id} onClick={() => {
             {currentAccount && navigate(`/${val.id}`)}
           }}>
             <h2>{val.ime_donacija}</h2>
