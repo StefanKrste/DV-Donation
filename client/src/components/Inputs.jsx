@@ -1,11 +1,13 @@
-import React, {useContext, useState} from "react";
+import React, {useContext, useState, useEffect} from "react";
 import {TransactionContext} from "../context/TransactionContext";
-
+import axios from "axios";
 import { ETHprice } from "../utils/constants";
 
 const Inputs = ( {currentId} ) => {
     const [inputData, setinputData] = useState({ amount: "", name: "", message: "", donationId: "" });
     const [AmountUSD, setAmountUSD] = useState(0);
+    const [USDvalue, setUSDvalue] = useState([]);
+    const CriptoAPI = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&ids=ethereum&order=market_cap_desc&per_page=100&page=1&sparkline=false";
 
     const {
         currentAccount,
@@ -33,11 +35,22 @@ const Inputs = ( {currentId} ) => {
         const name=e.target.name;
         setinputData((prevState) => ({ ...prevState, [name]: e.target.value }));
         if (name === "amount" && InputValue) {
-            setAmountUSD((InputValue*ETHprice).toFixed(2));
+            setAmountUSD((InputValue*USDvalue).toFixed(2));
         }else if (name === "amount"){
             setAmountUSD(0);
         }
     }
+
+    useEffect(() => {
+        axios
+            .get(
+                CriptoAPI
+            )
+            .then(res => {
+                setUSDvalue(res.data[0].current_price);
+            })
+            .catch(error => console.log(error));
+    }, );
 
     return (
         <div>
