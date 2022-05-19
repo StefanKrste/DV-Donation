@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ethers } from "ethers";
-
 import { contractABI, contractAddress, donationAddress } from "../utils/constants";
+import ConfirmDialog from "../components/ConfirmDialog";
 
 export const TransactionContext = React.createContext();
 
@@ -53,7 +53,7 @@ export const TransactionsProvider = ({ children }) => {
 
     const checkIfWalletIsConnect = async () => {
         try {
-            if (!ethereum) return alert("Please install MetaMask. \n" + <a href="https://metamask.io/download/">INSTALL </a>);
+            if (!ethereum) return;
 
             const accounts = await ethereum.request({ method: "eth_accounts" });
 
@@ -82,9 +82,16 @@ export const TransactionsProvider = ({ children }) => {
         }
     };
 
+    function ConfirmWin() {
+        let text = "Please install MetaMask!";
+        if (confirm(text)) {
+            window.open("https://metamask.io/download/");
+        }
+    };
+
     const connectWallet = async () => {
         try {
-            if (!ethereum) return alert("Please install MetaMask. \n" + "FROM: https://metamask.io/download/");
+            if (!ethereum) return ConfirmWin();
 
             const accounts = await ethereum.request({ method: "eth_requestAccounts", });
 

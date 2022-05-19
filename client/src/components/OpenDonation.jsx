@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import  Axios  from 'axios'
-import Inputs from './Inputs'
-import List from './List'
-
+import {Inputs,List} from ".";
 
 function OpenDonation() {
   const [donation, setDonation] = useState([])

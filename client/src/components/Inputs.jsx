@@ -18,14 +18,10 @@ const Inputs = () => {
         e.preventDefault();
         console.log(currentAccount)
         if(!currentAccount){
-            alert("Please connect to MetaMask");
-            return;
-        }
-        if (!amount || !name || !message){
-            alert("Please fill in all the inputs");
-            return;
-        }else if (amount<=0){
-            alert("Amount of ETH need to be positiv number");
+            let text = "Please install MetaMask!";
+            if (confirm(text)) {
+                window.open("https://metamask.io/download/");
+            }
             return;
         }
         sendTransaction(inputData);
@@ -44,12 +40,14 @@ const Inputs = () => {
 
     return (
         <div>
-            <input placeholder="Amount of (ETH)" step="0.0001" name="amount" type="number" onChange={handleInputChange}/>
-            <label name="amountUSD">${AmountUSD} USD</label>
-            <input placeholder="Name or nickname" name="name" type="text" onChange={handleInputChange}/>
-            <input placeholder="Message of donation" name="message" type="text" onChange={handleInputChange}/>
-            {isLoading ? <label>Transaction is in process</label> : (
-                <button type="button" onClick={handleSubmit}>Send now</button>)}
+            <form onSubmit={handleSubmit}>
+                <input placeholder="Amount of (ETH)" step="0.0001" name="amount" type="number" onChange={handleInputChange} required min="0.0001"/>
+                <label name="amountUSD">${AmountUSD} USD</label>
+                <input placeholder="Name or nickname" name="name" type="text" onChange={handleInputChange} required/>
+                <input placeholder="Message of donation" name="message" type="text" onChange={handleInputChange} required/>
+                {isLoading ? <label>Transaction is in process</label> : (
+                    <button type="submit" >Send now</button>)}
+            </form>
         </div>
     );
 }

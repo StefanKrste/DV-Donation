@@ -23,7 +23,7 @@ function ListAciveDonations() {
       {donationList.map((val) => {
         return (
           <div className='gallery' key={val.id} onClick={() => {
-            {currentAccount && navigate(`/${val.id}`)}
+            navigate(`/${val.id}`)
           }}>
             <h2 className='desc'>{val.ime_donacija}</h2>
             {val.slika != null && <img alt='Embedded Image' src={`data:image;base64,${val.slika}`}
