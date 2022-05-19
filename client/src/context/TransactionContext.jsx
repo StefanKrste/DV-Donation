@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ethers } from "ethers";
 import { contractABI, contractAddress, donationAddress } from "../utils/constants";
-import ConfirmDialog from "../components/ConfirmDialog";
 
 export const TransactionContext = React.createContext();
 
@@ -37,7 +36,8 @@ export const TransactionsProvider = ({ children }) => {
                     timestamp: new Date(transaction.timestamp.toNumber() * 1000).toLocaleString(),
                     message: transaction.message,
                     name: transaction.name,
-                    amount: parseInt(transaction.amount._hex) / (10 ** 18)
+                    amount: parseInt(transaction.amount._hex) / (10 ** 18),
+                    donationId: transaction.donationId
                 }));
 
                 console.log(structuredTransactions);
@@ -107,7 +107,7 @@ export const TransactionsProvider = ({ children }) => {
     const sendTransaction = async (inputData) => {
         try {
             if (ethereum) {
-                const { amount, name, message } = inputData;
+                const { amount, name, message, donationId } = inputData;
                 const transactionsContract = createEthereumContractSigner();
                 const parsedAmount = ethers.utils.parseEther(amount);
 
@@ -120,9 +120,8 @@ export const TransactionsProvider = ({ children }) => {
                         value: parsedAmount._hex,
                     }],
                 });
-
-                const transactionHash = await transactionsContract.addToBlockchain(donationAddress, parsedAmount, message, name);
-
+                
+                const transactionHash = await transactionsContract.addToBlockchain(donationAddress, parsedAmount, message, name, donationId);
                 setIsLoading(true);
                 console.log(`Loading - ${transactionHash.hash}`);
                 await transactionHash.wait();

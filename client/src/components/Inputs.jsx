@@ -3,8 +3,8 @@ import {TransactionContext} from "../context/TransactionContext";
 
 import { ETHprice } from "../utils/constants";
 
-const Inputs = () => {
-    const [inputData, setinputData] = useState({ amount: "", name: "", message: "" });
+const Inputs = ( {currentId} ) => {
+    const [inputData, setinputData] = useState({ amount: "", name: "", message: "", donationId: "" });
     const [AmountUSD, setAmountUSD] = useState(0);
 
     const {
@@ -14,7 +14,8 @@ const Inputs = () => {
     } = useContext(TransactionContext);
 
     const handleSubmit = (e) => {
-        const {amount, name, message} = inputData;
+        inputData.donationId = currentId.toString(); 
+        const {amount, name, message, donationId} = inputData;
         e.preventDefault();
         console.log(currentAccount)
         if(!currentAccount){

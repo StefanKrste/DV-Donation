@@ -24,8 +24,8 @@ function OpenDonation() {
           <p>{val.opis_donacija}</p>
           <p>{val.email}</p>
 
-          <Inputs/>
-          <List goal={val.goal}/>
+          <Inputs currentId={val.id}/>
+          <List goal={val.goal} currentId={val.id.toString()}/>
 
           </div>
         )
