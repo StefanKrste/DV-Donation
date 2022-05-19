@@ -2,6 +2,7 @@ import React, {useContext, useState, useEffect} from "react";
 
 import { TransactionContext } from "../context/TransactionContext";
 import { donationAddress } from "../utils/constants";
+import Pagination from "./Pagination";
 
 const ListElement = ({ addressTo,addressFrom, timestamp, message, name, amount, donationId}) => {
     return (
@@ -25,13 +26,32 @@ const List = ( {goal, currentId} ) => {
         getAllTransactions();
     }, []);
 
+    const [currentPage, setCurrentPage] = useState(1);
+    const donationsPerPage = 10;
+
+  const indexOfLastDonation = currentPage * donationsPerPage;
+  const indexOfFirstDonation = indexOfLastDonation - donationsPerPage;
+  const transactionList = filterTransactions.slice(indexOfFirstDonation, indexOfLastDonation);
+
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    window.scroll({
+      top: 0, 
+      left: 1000,
+      behavior: "instant",
+     });
+  };
+
     return (
         <div>
             <p onClick={getAllTransactions}>Оur goal: {Status}/{goal} ETH</p>
             <p>All transactions</p>
-            {filterTransactions.map((transaction, i) => (
+            {transactionList.map((transaction, i) => (
                 <ListElement key={i} {...transaction} />
             ))}
+
+        <Pagination donationsPerPage={donationsPerPage} totalDonations={filterTransactions.length}
+       paginate={paginate}/>
         </div>
     );
 }

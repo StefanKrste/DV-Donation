@@ -4,6 +4,7 @@ import { useState, useContext, useEffect } from 'react'
 import { TransactionContext } from '../context/TransactionContext'
 import { useNavigate } from 'react-router-dom'
 import ConfirmDialog from './ConfirmDialog'
+import Pagination from './Pagination'
 
 function MyDonations() {
     const [donationList, setDonationList] = useState([])
@@ -39,6 +40,22 @@ function MyDonations() {
         setShowDialogWindow(false)
       }
 
+      const [currentPage, setCurrentPage] = useState(1);
+  const donationsPerPage = 12;
+
+  const indexOfLastDonation = currentPage * donationsPerPage;
+  const indexOfFirstDonation = indexOfLastDonation - donationsPerPage;
+  const currentDonation = donationList.slice(indexOfFirstDonation, indexOfLastDonation);
+
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    window.scroll({
+      top: 0, 
+      left: 1000,
+      behavior: "instant",
+     });
+  };
+
   return (
     <div className='paddinglista'>
        {showDialogWindow && <ConfirmDialog 
@@ -46,7 +63,7 @@ function MyDonations() {
       description={"Are you sure you want to delete this task?"}
       cancelDialog={cancelDialog}
       confirmDialog={confirmDialog}/>}
-        {donationList.map((val) => {
+        {currentDonation.map((val) => {
         return (
           <div   className='gallery'  key={val.id}  >
             <div   onClick={() => {
@@ -75,6 +92,9 @@ function MyDonations() {
           </div>
         ) 
       })}
+
+    <Pagination donationsPerPage={donationsPerPage} totalDonations={donationList.length}
+       paginate={paginate}/>
 
     </div>
   )

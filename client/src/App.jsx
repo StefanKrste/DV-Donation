@@ -1,7 +1,8 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Logo,AddDonation,MyDonations,OpenDonation,Home,Footer} from "./components";
 import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Pagination from './components/Pagination';
 
 const App = () => {
   return (
