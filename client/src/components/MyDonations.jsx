@@ -57,7 +57,9 @@ function MyDonations() {
   };
 
   return (
-    <div className='paddinglista'>
+    <div className="paddinglista">
+    <div className="grid">
+     
        {showDialogWindow && <ConfirmDialog 
       showDialog={showDialogWindow} title={"Delete a donation?"}
       description={"Are you sure you want to delete this task?"}
@@ -65,22 +67,25 @@ function MyDonations() {
       confirmDialog={confirmDialog}/>}
         {currentDonation.map((val) => {
         return (
-          <div   className='gallery'  key={val.id}  >
+          
+           <div className='grid-item'>
+          <div    key={val.id}  >
             <div   onClick={() => {
               {currentAccount && navigate(`/${val.id}`)}
             }}>
-              <h2   className='desc' >{val.ime_donacija}</h2>
+              <h2  >{val.ime_donacija}</h2>
               {val.slika != null && <img className='img' alt='Embedded Image' src={`data:image;base64,${val.slika}`}
               height="250px" width="250px"/>}
-               <p className='prazno'></p>
-              <p  className='desc'>
+             
+              <p  >
                 {val.opis_donacija}
               </p>
-              {<p><b className='status'>
+              {<p><b >
                   Status: {val.potvrda_admin == 1 ? "Confirmed" : "Waiting for confirmation"}
                   </b></p>}
              
 
+            </div>
             </div>
             <div>      
               <button  className='button' onClick={() => {
@@ -88,14 +93,17 @@ function MyDonations() {
                  setDeleteDonationId(val.id)
               }}>Delete donation</button>
             </div>
-            
-          </div>
+            </div>
+        
+          
         ) 
       })}
+      
 
     <Pagination donationsPerPage={donationsPerPage} totalDonations={donationList.length}
        paginate={paginate}/>
 
+    </div>
     </div>
   )
 }
