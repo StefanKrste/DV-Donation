@@ -57,14 +57,15 @@ function MyDonations() {
   };
 
   return (
-    <div className="paddinglista">
+    <div>
     <div className="grid">
-     
-       {showDialogWindow && <ConfirmDialog 
+      
+      {showDialogWindow && <ConfirmDialog 
       showDialog={showDialogWindow} title={"Delete a donation?"}
       description={"Are you sure you want to delete this task?"}
       cancelDialog={cancelDialog}
       confirmDialog={confirmDialog}/>}
+      
         {currentDonation.map((val) => {
         return (
           
@@ -99,13 +100,13 @@ function MyDonations() {
           
         ) 
       })}
-      
+      </div>
 
     <Pagination donationsPerPage={donationsPerPage} totalDonations={donationList.length}
        paginate={paginate}/>
 
     </div>
-    </div>
+ 
   )
 }
 

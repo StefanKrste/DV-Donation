@@ -65,6 +65,7 @@ function ListAllDonations() {
 
   return (
     <div className='paddinglista'>
+       <div className="grid">
       {showDialogWindow && <ConfirmDialog 
       showDialog={showDialogWindow} title={"Delete a donation?"}
       description={"Are you sure you want to delete this task?"}
@@ -72,7 +73,8 @@ function ListAllDonations() {
       confirmDialog={confirmDialog}/>}
       {currentDonation.map((val) => {
         return (
-          <div className='gallery' key={val.id} >
+          <div className='grid-item'>
+          <div  key={val.id} >
             <div onClick={() => {
               {currentAccount && navigate(`/${val.id}`)}
             }}>
@@ -94,11 +96,13 @@ function ListAllDonations() {
               }}>Delete donation</button>
             </div>
           </div>
+          </div>
         )
       })}
       <Pagination donationsPerPage={donationsPerPage} totalDonations={donationList.length}
        paginate={paginate}/>
 
+    </div>
     </div>
   )
 }

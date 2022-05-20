@@ -38,9 +38,11 @@ function ListAciveDonations() {
    
   return (
     <div className='paddinglista' >
+          <div className="grid">
       {currentDonation.map((val) => {
         return (
-          <div className='gallery' key={val.id} onClick={() => {
+          <div className='grid-item'>
+          <div  key={val.id} onClick={() => {
             navigate(`/${val.id}`)
           }}>
             <h2 className='desc'>{val.ime_donacija}</h2>
@@ -51,12 +53,14 @@ function ListAciveDonations() {
               {val.opis_donacija}
             </p>
           </div>
+          </div>
         ) 
       })}
 
       <Pagination donationsPerPage={donationsPerPage} totalDonations={donationList.length}
        paginate={paginate}/>
 
+    </div>
     </div>
   )
 }
