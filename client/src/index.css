@@ -1,246 +1,242 @@
 body {
-   background-image: url("slika2.jpg");
-  background-attachment: fixed;
-    background-size:cover; 
- /* background-image: radial-gradient(circle,rgb(109, 45, 247),rgb(79, 0, 128),white); */
+    background-image: url("slika2.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    /* background-image: radial-gradient(circle,rgb(109, 45, 247),rgb(79, 0, 128),white); */
 
 
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
-
-
-
-.prazno 
-{
-  height: 20px;
+.prazno {
+    height: 20px;
 }
 
 .desc {
-  height: 70px;
-  width: 445px;;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* number of lines to show */
-          line-clamp: 2; 
-  -webkit-box-orient: vertical;
-  color: rgba(83, 82, 82, 0.816);
+    height: 70px;
+    width: 445px;;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    color: rgba(83, 82, 82, 0.816);
 
 }
 
 .desc2 {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 3; /* number of lines to show */
-          line-clamp: 3; 
-  -webkit-box-orient: vertical;
-  color: rgba(83, 82, 82, 0.816);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* number of lines to show */
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    color: rgba(83, 82, 82, 0.816);
 
 }
 
-.status
-{
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* number of lines to show */
-          line-clamp: 2; 
-  -webkit-box-orient: vertical;
-  color: #373974;
-  
+.status {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    color: #373974;
+
 }
 
-.linkNavBar
-{
-  padding: 2mm;
-  color:#fafafa;
-  font-weight: 400;
-  text-decoration: none;
+.linkNavBar {
+    padding: 2mm;
+    color: #fafafa;
+    font-weight: 400;
+    text-decoration: none;
 }
-.linkNavBar:hover
-{
-  color:#b5aaf5d7;
-  text-shadow: 0px 1px #aae0f5d7;
+
+.linkNavBar:hover {
+    color: #b5aaf5d7;
+    text-shadow: 0px 1px #aae0f5d7;
 }
-.linkNavBar:after{
-  color:#a173fb;
+
+.linkNavBar:after {
+    color: #a173fb;
 }
 
 .button {
-  width: 40mm;
-  height: 10mm;
-  border: 0cm;
-  display: inline-block;
-  border-radius: 950px;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: small;
-  transition: all 0.3s;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
+    width: 40mm;
+    height: 10mm;
+    border: 0cm;
+    display: inline-block;
+    border-radius: 950px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: small;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
 }
 
 .button:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(133, 106, 244, 0.807);
-  border-radius: 10rem;
-  z-index: -2;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(133, 106, 244, 0.807);
+    border-radius: 10rem;
+    z-index: -2;
 }
 
 .button:before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0%;
-  height: 100%;
-  background-color: #4519ac93;
-  transition: all 0.3s;
-  border-radius: 10rem;
-  z-index: -1;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #4519ac93;
+    transition: all 0.3s;
+    border-radius: 10rem;
+    z-index: -1;
 }
 
 .button:hover {
-  color: #fff;
-}
-.button:hover:before {
-  width: 100%;
+    color: #fff;
 }
 
-.user
-{
-  padding: 2mm;
-  color:#fafafaba;
-  font-weight: 400;
+.button:hover:before {
+    width: 100%;
 }
+
+.user {
+    padding: 2mm;
+    color: #fafafaba;
+    font-weight: 400;
+}
+
 .gallery2 {
-  background-color: rgba(255, 255, 255, 0.552);
-  border:2px solid rgba(255, 255, 255, 0);
-  margin: 5px;
-  padding: 2px;
-  width: 450px;
-  height: 450px;
+    background-color: rgba(255, 255, 255, 0.552);
+    border: 2px solid rgba(255, 255, 255, 0);
+    margin: 5px;
+    padding: 2px;
+    width: 450px;
+    height: 450px;
 }
 
 .donacija {
-  color: rgba(83, 82, 82, 0.816);
-  float:left;
-  text-align: left;
-  width: 450px;
+    color: rgba(83, 82, 82, 0.816);
+    float: left;
+    text-align: left;
+    width: 450px;
 }
 
-.forma
-{
-  background-color: rgba(255, 255, 255, 0.653);
-  padding: 2px;
-  border: 3px #373974;
-  margin:2px;
-  width:435px;
-  height: 30px;
+.forma {
+    background-color: rgba(255, 255, 255, 0.653);
+    padding: 2px;
+    border: 3px #373974;
+    margin: 2px;
+    width: 435px;
+    height: 30px;
 }
 
 .grid {
-  display: grid;
-  grid-template-columns:450px 450px 450px;
- column-gap: 20px;
- row-gap: 20px;
- margin: 0 auto;
- margin-top: 30px;
- justify-content: center;
-  
+    display: grid;
+    grid-template-columns:450px 450px 450px;
+    column-gap: 20px;
+    row-gap: 20px;
+    margin: 0 auto;
+    margin-top: 30px;
+    justify-content: center;
+
 }
 
 .grid-item {
-  background-color: rgba(255, 255, 255, 0.652);
-  border:2px solid rgba(255, 255, 255, 0);
- 
- 
-  width: 450px;
-  height:auto;
+    background-color: rgba(255, 255, 255, 0.652);
+    border: 2px solid rgba(255, 255, 255, 0);
+
+
+    width: 450px;
+    height: auto;
 }
+
 .grid-item :hover {
-  
-  background-color: rgba(255, 255, 255, 0.85);
-  border:0px solid rgba(255, 255, 255, 0);
-  
 
-  
-}
-.kontakt
-{
-  padding: 2mm;
-  color:#fafafac5;
-  font-weight: 350;
-  text-decoration: none;
-}
-.kontakt:hover
-{
-  padding: 2mm;
-  color:#fafafa;
-  font-weight: 350;
-  text-decoration: none;
-}
+    background-color: rgba(255, 255, 255, 0.85);
+    border: 0px solid rgba(255, 255, 255, 0);
 
 
-.forma2
-{
-  background-color: rgba(255, 255, 255, 0.653);
-  padding: 2px;
-  border: 1px #373974;
-  border-radius: 8px;
-  margin: 2px;
-  width: 480px;
-  height: 30px;
 }
-.grid2{
-  display: grid;
-  grid-template-columns:auto auto 0px;
- column-gap: 20px;
- row-gap: 20px;
- margin: 0 auto;
- margin-top: 30px;
- justify-content: center;
+
+.kontakt {
+    padding: 2mm;
+    color: #fafafac5;
+    font-weight: 350;
+    text-decoration: none;
 }
+
+.kontakt:hover {
+    padding: 2mm;
+    color: #fafafa;
+    font-weight: 350;
+    text-decoration: none;
+}
+
+
+.forma2 {
+    background-color: rgba(255, 255, 255, 0.653);
+    padding: 2px;
+    border: 1px #373974;
+    border-radius: 8px;
+    margin: 2px;
+    width: 480px;
+    height: 30px;
+}
+
+.grid2 {
+    display: grid;
+    grid-template-columns:auto auto 0px;
+    column-gap: 20px;
+    row-gap: 20px;
+    margin: 0 auto;
+    margin-top: 30px;
+    justify-content: center;
+}
+
 .gallery4 {
-  background-color: rgba(255, 255, 255, 0.624);
-  border:2px solid rgba(79, 79, 79, 0.535);
-  margin: 5px;
-  padding: 2px;
-  width: 500px;
-  height: fit-content;
-  color:rgb(82, 81, 81);
-  border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.624);
+    border: 2px solid rgba(79, 79, 79, 0.535);
+    margin: 5px;
+    padding: 2px;
+    width: 500px;
+    height: fit-content;
+    color: rgb(82, 81, 81);
+    border-radius: 10px;
 
 }
-.text
-{
-color: #995bbbbd;
-font-weight: lighter;
-font-family: Arial, Helvetica, sans-serif;
-text-align: start;
+
+.text {
+    color: #995bbbbd;
+    font-weight: lighter;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: start;
 }
-.text2
-{
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: start; 
-  font-weight:lighter;
-  font-size: large;
+
+.text2 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: start;
+    font-weight: lighter;
+    font-size: large;
 }

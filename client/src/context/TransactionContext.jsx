@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ethers } from "ethers";
-import { contractABI, contractAddress, donationAddress } from "../utils/constants";
+import { contractABI, contractAddress } from "../utils/constants";
 
 export const TransactionContext = React.createContext();
 
@@ -107,7 +107,7 @@ export const TransactionsProvider = ({ children }) => {
     const sendTransaction = async (inputData) => {
         try {
             if (ethereum) {
-                const { amount, name, message, donationId } = inputData;
+                const { amount, name, message, donationId, donationAddress } = inputData;
                 const transactionsContract = createEthereumContractSigner();
                 const parsedAmount = ethers.utils.parseEther(amount);
 

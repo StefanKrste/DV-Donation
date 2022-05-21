@@ -1,6 +1,6 @@
 import React, {useState, useContext} from "react"
 import Axios from 'axios'
-import { TransactionContext } from "../context/TransactionContext"
+import {TransactionContext} from "../context/TransactionContext"
 
 const AddDonation = () => {
     const [name, setName] = useState('')
@@ -12,7 +12,7 @@ const AddDonation = () => {
 
     const {
         currentAccount,
-      } = useContext(TransactionContext);
+    } = useContext(TransactionContext);
 
     const submitFunc = (event) => {
         event.preventDefault()
@@ -29,9 +29,9 @@ const AddDonation = () => {
         }
 
         Axios.post('http://localhost:3001/donation/insert', data, config).then((response) => {
-            response.data == "Success" ? 
-            setLabelText("You have successfully added the donation!") : 
-            setLabelText("Something went wrong. Pleaste try again!")
+            response.data == "Success" ?
+                setLabelText("You have successfully added the donation!") :
+                setLabelText("Something went wrong. Pleaste try again!")
         }).catch((err) => {
             console.log(err)
         }).finally(() => {
@@ -39,72 +39,68 @@ const AddDonation = () => {
             setDescription("")
             setEmail("")
             setGoal("")
-            event.target.image.value=null
+            event.target.image.value = null
             setImage()
         })
-        }
+    }
 
-  return (
-      <div style={{marginTop:'5%',marginLeft:'35%'}} className='gallery2'>
-        <form   onSubmit={submitFunc}>
-        
-        <div className="desc"><h2 >Create your donation</h2></div>
-        
-            <div className="donacija" >
-                <label>Name of donation</label>
-              <div>  <input  className='forma' type='text' name="name" required
-               
-                value={name} onChange={(e) => 
-                setName(e.target.value)}/>
-                </div>
-            </div>
-           
-            
-            <div className="donacija">
-                <label>Description of the donation</label>
-                <div>
-                <input   type='text' name="description" className='forma' required
-                value={description} onChange={(e) => 
-                    setDescription(e.target.value)}/>
-            </div>
-            </div>
-           
+    return (
+        <div style={{marginTop: '5%', marginLeft: '35%'}} className='gallery2'>
+            <form onSubmit={submitFunc}>
+                <div className="desc"><h2>Create your donation</h2></div>
 
-            <div className="donacija">
-                <label>E-mail address for contact</label>
-                <div>
-                <input className='forma' type="email" name="email"required
-                value={email} onChange={(e) => 
-                    setEmail(e.target.value)}/>
+                <div className="donacija">
+                    <label>Name of donation</label>
+                    <div><input className='forma' type='text' name="name" required
+                                value={name} onChange={(e) =>
+                        setName(e.target.value)}/>
                     </div>
-            </div>
-           
-            <div className="donacija">
-                <label>Goal in ETH</label>
-                <div>
-                <input className='forma'  type="number" name="goal" required
-                value={goal} onChange={(e) => 
-                    setGoal(e.target.value)}/>
-            </div>
-            </div>
-            <div><p className="prazno"></p></div>
-            <div className="donacija">
-                <label>Upload image</label>
-                <input style={{margin:'2px'}}  type="file" accept="image/*" name="image" required
-                onChange={(e) => {
-                    const image = e.target.files[0]
-                    setImage(image)
-                    }}/>
-            </div>
-            
+                </div>
 
-            <div><p className="prazno"></p></div>
-            <button style={{marginTop:'30px'}} class="btn btn-secondary" type="submit">Submit donation</button>
-        </form>
+                <div className="donacija">
+                    <label>Description of the donation</label>
+                    <div>
+                        <input type='text' name="description" className='forma' required
+                               value={description} onChange={(e) =>
+                            setDescription(e.target.value)}/>
+                    </div>
+                </div>
 
-        <label style={{color:'green'}} className='m-3'>{labelText}</label>
-      </div>
-  )
+                <div className="donacija">
+                    <label>E-mail address for contact</label>
+                    <div>
+                        <input className='forma' type="email" name="email" required
+                               value={email} onChange={(e) =>
+                            setEmail(e.target.value)}/>
+                    </div>
+                </div>
+
+                <div className="donacija">
+                    <label>Goal in ETH</label>
+                    <div>
+                        <input className='forma' type="number" name="goal" required
+                               value={goal} onChange={(e) =>
+                            setGoal(e.target.value)}/>
+                    </div>
+                </div>
+
+                <div><p className="prazno"></p></div>
+                <div className="donacija">
+                    <label>Upload image</label>
+                    <input style={{margin: '2px'}} type="file" accept="image/*" name="image" required
+                           onChange={(e) => {
+                               const image = e.target.files[0]
+                               setImage(image)
+                           }}/>
+                </div>
+
+                <div><p className="prazno"></p></div>
+                <button style={{marginTop: '30px'}} className="btn btn-secondary" type="submit">Submit donation</button>
+            </form>
+
+            <label style={{color: 'green'}} className='m-3'>{labelText}</label>
+        </div>
+    )
 }
 
 export default AddDonation
