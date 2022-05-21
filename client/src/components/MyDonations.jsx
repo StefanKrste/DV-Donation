@@ -78,7 +78,7 @@ function MyDonations() {
               {val.slika != null && <img className='img' alt='Embedded Image' src={`data:image;base64,${val.slika}`}
               height="250px" width="250px"/>}
              <p className='prazno'></p>
-              <p className='desc' >
+              <p className='desc2' >
                 {val.opis_donacija}
               </p>
               {<p><b className='status'>
@@ -100,11 +100,14 @@ function MyDonations() {
           
         ) 
       })}
+        <div><p className='prazno'></p></div>
       </div>
-
-    <Pagination donationsPerPage={donationsPerPage} totalDonations={donationList.length}
+      <div style={{float:'right',marginRight:'15px'}}>
+    <Pagination s donationsPerPage={donationsPerPage} totalDonations={donationList.length}
        paginate={paginate}/>
+               
 
+</div>
     </div>
  
   )

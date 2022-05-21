@@ -99,10 +99,10 @@ const AddDonation = () => {
             
 
             <div><p className="prazno"></p></div>
-            <button style={{margin:'2px'}} type="submit">Submit donation</button>
+            <button style={{marginTop:'30px'}} class="btn btn-secondary" type="submit">Submit donation</button>
         </form>
 
-        <label className='m-3'>{labelText}</label>
+        <label style={{color:'green'}} className='m-3'>{labelText}</label>
       </div>
   )
 }

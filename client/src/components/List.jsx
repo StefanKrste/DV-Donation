@@ -7,12 +7,12 @@ import Pagination from "./Pagination";
 const ListElement = ({ addressTo,addressFrom, timestamp, message, name, amount, donationId}) => {
     return (
         <div>
-            <hr></hr>
-            <p>From: {name}</p>
-            <p>From address: {addressFrom}</p>
-            <p>Amount: {amount} ETH</p>
-            <p>Message: {message}</p>
-            <p>{timestamp}</p>
+               <hr></hr>
+            <p className="text" style={{fontSize:'20px'}} > <b>{name}</b></p>
+            <p  className="text2" style={{color:'#208B44'}} ><b>{amount} ETH</b></p>
+            <p  className="text2" >{message}</p>
+            {/* <p className="text">Address: {addressFrom}</p> */}
+            <p  >{timestamp}</p>
         </div>
     );
 };
@@ -27,7 +27,7 @@ const List = ( {goal, currentId} ) => {
     }, []);
 
     const [currentPage, setCurrentPage] = useState(1);
-    const donationsPerPage = 10;
+    const donationsPerPage = 3;
 
   const indexOfLastDonation = currentPage * donationsPerPage;
   const indexOfFirstDonation = indexOfLastDonation - donationsPerPage;
@@ -44,14 +44,19 @@ const List = ( {goal, currentId} ) => {
 
     return (
         <div>
-            <p onClick={getAllTransactions}>Оur goal: {Status}/{goal} ETH</p>
-            <p>All transactions</p>
-            {transactionList.map((transaction, i) => (
-                <ListElement key={i} {...transaction} />
-            ))}
+            
+            <h2  class="fw-lighter" onClick={getAllTransactions}>Оur goal: {Status}/{goal} ETH</h2>
+            <h3  class="fw-lighter" >All transactions</h3>
+         
 
+            {transactionList.map((transaction, i) => (
+                
+                <ListElement key={i} { ...transaction} />
+            ))}
+         <div style={{float:'right',marginRight:'15px'}}>
         <Pagination donationsPerPage={donationsPerPage} totalDonations={filterTransactions.length}
        paginate={paginate}/>
+       </div>
         </div>
     );
 }

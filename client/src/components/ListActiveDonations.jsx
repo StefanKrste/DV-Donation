@@ -58,10 +58,12 @@ function ListAciveDonations() {
           </div>
         ) 
       })}
+       <div><p className='prazno'></p></div>
 </div>
-      <Pagination donationsPerPage={donationsPerPage} totalDonations={donationList.length}
+<div style={{float:'right',marginRight:'15px'}}>
+      <Pagination  donationsPerPage={donationsPerPage} totalDonations={donationList.length}
        paginate={paginate}/>
-
+     </div>
     </div>
    
   )

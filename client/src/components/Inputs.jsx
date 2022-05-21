@@ -55,12 +55,34 @@ const Inputs = ( {currentId} ) => {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <input placeholder="Amount of (ETH)" step="0.0001" name="amount" type="number" onChange={handleInputChange} required min="0.0001"/>
-                <label name="amountUSD">${AmountUSD} USD</label>
-                <input placeholder="Name or nickname" name="name" type="text" onChange={handleInputChange} required/>
-                <input placeholder="Message of donation" name="message" type="text" onChange={handleInputChange} required/>
-                {isLoading ? <label>Transaction is in process</label> : (
-                    <button type="submit" >Send now</button>)}
+                <div className="donacija">
+                <label>Amount of (ETH)</label>
+                <div>
+                <input  className='forma2'  step="0.0001" name="amount" type="number" onChange={handleInputChange} required min="0.0001"/>
+                <label class="text-success"  name="amountUSD"> <b>${AmountUSD} USD </b></label>
+                </div>
+                </div>
+                <div className="donacija">
+                <label>Name or nickname</label>
+                <div>
+                <input  className='forma2'   name="name" type="text" onChange={handleInputChange} required/>
+                </div>
+                </div>
+                <div className="donacija">
+                <label>Message of donation</label>
+                <div>
+                <input  className='forma2'  name="message" type="text" onChange={handleInputChange} required/>
+               
+                </div>
+                <p style={{lenght:'10px'}}></p>
+                </div>
+              
+                <div>
+              
+                {isLoading ? <label class="text-primary">Transaction is in process</label>  : (
+                    
+                    <button class="btn btn-secondary" type="submit" >Send now</button>)}
+                   </div> 
             </form>
         </div>
     );

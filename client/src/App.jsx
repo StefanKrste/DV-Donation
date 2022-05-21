@@ -19,6 +19,7 @@ const App = () => {
               </Routes>
           </div>
         </Router>
+        <div><p className='prazno'></p></div>
         <Footer/>
       </div>
   )

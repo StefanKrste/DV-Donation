@@ -16,10 +16,12 @@ const Logo = () => {
             <Link to="/"  className='linkNavBar'>Home</Link>
             {currentAccount && <Link to="/myDonations" className='linkNavBar' >My donations</Link>}
             {currentAccount && <Link to="/addDonation" className='linkNavBar'>Add donation</Link>}
-            {!currentAccount ? (<button type="button" 
+            {!currentAccount ? (<button type="button" class="btn btn-secondary"
             onClick={connectWallet} >Connect with MetaMask</button>)
             : (<label   className='user' >User:    {currentAccount}</label>)}
+             <hr style={{color:'white'}}></hr>
             <Outlet/>
+           
         </div>
        
        
