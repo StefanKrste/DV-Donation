@@ -64,7 +64,7 @@ function ListAllDonations() {
   };
 
   return (
-    <div className='paddinglista'>
+    <div>
        <div className="grid">
       {showDialogWindow && <ConfirmDialog 
       showDialog={showDialogWindow} title={"Delete a donation?"}
@@ -95,14 +95,19 @@ function ListAllDonations() {
               setDeleteDonationId(val.id)
               }}>Delete donation</button>
             </div>
+            
+            <p className='prazno'></p>
+            <p className='prazno'></p>
+            
           </div>
           </div>
         )
       })}
+       </div>
       <Pagination donationsPerPage={donationsPerPage} totalDonations={donationList.length}
        paginate={paginate}/>
 
-    </div>
+   
     </div>
   )
 }

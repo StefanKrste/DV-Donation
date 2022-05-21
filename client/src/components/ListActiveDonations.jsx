@@ -37,7 +37,7 @@ function ListAciveDonations() {
 
    
   return (
-    <div className='paddinglista' >
+    <div>
           <div className="grid">
       {currentDonation.map((val) => {
         return (
@@ -52,16 +52,18 @@ function ListAciveDonations() {
             <p className='desc2'>
               {val.opis_donacija}
             </p>
+            <p className='prazno'></p>
+
           </div>
           </div>
         ) 
       })}
-
+</div>
       <Pagination donationsPerPage={donationsPerPage} totalDonations={donationList.length}
        paginate={paginate}/>
 
     </div>
-    </div>
+   
   )
 }
 

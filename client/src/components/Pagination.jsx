@@ -9,11 +9,11 @@ function Pagination( {donationsPerPage, totalDonations, paginate} ) {
   return (
      
     <nav >
-        <ul className="pagination" >
+        <ul classNam="page" >
             {pageNumbers.map((number) => {
                 return (
-                <li key={number} className="page-item">
-                    <a onClick={() => paginate(number)}  className='page-link'>
+                <li key={number} >
+                    <a onClick={() => paginate(number)}  className='broj'>
                     {number}
                     </a>
                    
