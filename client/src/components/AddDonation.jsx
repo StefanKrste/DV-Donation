@@ -87,7 +87,7 @@ const AddDonation = () => {
                 <div><p className="prazno"></p></div>
                 <div className="donacija">
                     <label>Upload image</label>
-                    <input style={{margin: '2px'}} type="file" accept="image/*" name="image" required
+                    <input className="form-control forma" style={{margin: '2px'}} type="file" accept="image/*" name="image" required
                            onChange={(e) => {
                                const image = e.target.files[0]
                                setImage(image)
