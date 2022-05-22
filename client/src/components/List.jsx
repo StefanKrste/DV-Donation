@@ -43,7 +43,6 @@ const List = ({goal, currentId}) => {
 
     return (
         <div>
-            {console.log("aaaaaaaaaaaaa")}
             <h2 className="fw-lighter" onClick={getAllTransactions}>Оur goal: {Status}/{goal} ETH</h2>
             <h3 className="fw-lighter">All transactions</h3>
 
