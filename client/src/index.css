@@ -133,7 +133,7 @@ code {
     margin: 5px;
     padding: 2px;
     width: 450px;
-    height: 450px;
+    height: 580px;
 }
 
 .donacija {
@@ -150,6 +150,14 @@ code {
     margin: 2px;
     width: 435px;
     height: 30px;
+}
+
+.textArea {
+    background-color: rgba(255, 255, 255, 0.653);
+    padding: 2px;
+    border: 3px #373974;
+    margin: 2px;
+    resize: none;
 }
 
 .grid {

@@ -84,37 +84,28 @@ function ListAllDonations() {
                                     {val.slika != null &&
                                     <img alt='Embedded Image' src={`data:image;base64,${val.slika}`}
                                          height="250px" width="250px"/>}
-                                    <p className='prazno'></p>
-                                    <p className='desc2'>
+                                    <p className='desc2 mt-3'>
                                         {val.opis_donacija}</p>
                                 </div>
-
                                 <div>
                                     {val.potvrda_admin == 0 && <button
                                         onClick={() => {
                                             addDonation(val.id)
                                         }} className='button'>Add donation</button>}
-                                    <button className='button' onClick={() => {
+                                    <button className='button pt-15' onClick={() => {
                                         setShowDialogWindow(true)
                                         setDeleteDonationId(val.id)
                                     }}>Delete donation
                                     </button>
+                                    <p className='prazno'></p>
                                 </div>
-
-                                <p className='prazno'></p>
-                                <p className='prazno'></p>
-
                             </div>
                         </div>
                     )
                 })}
-                <div><p className='prazno'></p></div>
             </div>
-            <div style={{float: 'right', marginRight: '15px'}}>
-                <Pagination donationsPerPage={donationsPerPage} totalDonations={donationList.length}
-                            paginate={paginate}/>
-
-            </div>
+            <Pagination donationsPerPage={donationsPerPage} totalDonations={donationList.length}
+                        paginate={paginate}/>
         </div>
     )
 }

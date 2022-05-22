@@ -48,21 +48,17 @@ function ListAciveDonations() {
                                 <h2 className='desc'>{val.ime_donacija}</h2>
                                 {val.slika != null && <img alt='Embedded Image' src={`data:image;base64,${val.slika}`}
                                                            height="250px" width="250px"/>}
-                                <p className='prazno'></p>
-                                <p className='desc2'>
+
+                                <p className='desc2 mt-3'>
                                     {val.opis_donacija}
                                 </p>
-                                <p className='prazno'></p>
                             </div>
                         </div>
                     )
                 })}
-                <div><p className='prazno'></p></div>
             </div>
-            <div style={{float: 'right', marginRight: '15px'}}>
-                <Pagination donationsPerPage={donationsPerPage} totalDonations={donationList.length}
+            <Pagination donationsPerPage={donationsPerPage} totalDonations={donationList.length}
                             paginate={paginate}/>
-            </div>
         </div>
 
     )

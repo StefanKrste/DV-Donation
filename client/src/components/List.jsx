@@ -7,18 +7,18 @@ const ListElement = ({addressTo, addressFrom, timestamp, message, name, amount, 
     return (
         <div>
             <hr></hr>
-            <p className="text" style={{fontSize: '20px'}}><b>{name}</b></p>
-            <p className="text2" style={{color: '#208B44'}}><b>{amount} ETH</b></p>
-            <p className="text2">{message}</p>
-            {/* <p className="text">Address: {addressFrom}</p> */}
-            <p>{timestamp}</p>
+            <p className="text" style={{fontSize: '20px'}}><b>From: {name}</b></p>
+            <p className="text2" style={{color: '#208B44'}}><b>Amount: {amount} ETH</b></p>
+            <p className="text2">Message: {message}</p>
+            <p className="text2 font-weight-bold ">Addr: {addressFrom}</p>
+            <p >{timestamp}</p>
         </div>
     );
 };
 
 const List = ({goal, currentId}) => {
     const {transactions, getAllTransactions} = useContext(TransactionContext);
-    const filterTransactions = transactions.reverse().filter(transaction => transaction.donationId === currentId);
+    const filterTransactions = transactions.filter(transaction => transaction.donationId === currentId).reverse();
     const Status = (filterTransactions.reduce((total, currentValue) => total + currentValue.amount, 0)).toFixed(4);
 
     useEffect(() => {
@@ -43,6 +43,7 @@ const List = ({goal, currentId}) => {
 
     return (
         <div>
+            {console.log("aaaaaaaaaaaaa")}
             <h2 className="fw-lighter" onClick={getAllTransactions}>Оur goal: {Status}/{goal} ETH</h2>
             <h3 className="fw-lighter">All transactions</h3>
 

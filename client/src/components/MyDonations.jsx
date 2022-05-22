@@ -10,14 +10,16 @@ function MyDonations() {
     const [donationList, setDonationList] = useState([])
 
     const {
-        currentAccount,
+        currentAccount
     } = useContext(TransactionContext);
 
     useEffect(() => {
-        Axios.get(`http://localhost:3001/donation/getMyDonations/${currentAccount}`).then((response) => {
-            setDonationList(response.data)
-        })
-    }, [])
+        if (currentAccount) {
+            Axios.get(`http://localhost:3001/donation/getMyDonations/${currentAccount}`).then((response) => {
+                setDonationList(response.data)
+            })
+        }
+    }, [currentAccount])
 
     const deleteDonation = (donationId) => {
         Axios.delete(`http://localhost:3001/donation/delete/${donationId}`)
@@ -79,33 +81,29 @@ function MyDonations() {
                                     {val.slika != null &&
                                     <img className='img' alt='Embedded Image' src={`data:image;base64,${val.slika}`}
                                          height="250px" width="250px"/>}
-                                    <p className='prazno'></p>
-                                    <p className='desc2'>
+
+                                    <p className='desc2 mt-3'>
                                         {val.opis_donacija}
                                     </p>
                                     {<p><b className='status'>
                                         Status: {val.potvrda_admin == 1 ? "Confirmed" : "Waiting for confirmation"}
                                     </b></p>}
-
                                 </div>
-                                <button className='button' onClick={() => {
-                                    setShowDialogWindow(true)
-                                    setDeleteDonationId(val.id)
-                                }}>Delete donation
-                                </button>
-                                <p className='prazno'></p>
+                                <div>
+                                    <button className='button' onClick={() => {
+                                        setShowDialogWindow(true)
+                                        setDeleteDonationId(val.id)
+                                    }}>Delete donation
+                                    </button>
+                                    <p className='prazno'></p>
+                                </div>
                             </div>
                         </div>
                     )
                 })}
-                <div><p className='prazno'></p></div>
             </div>
-            <div style={{float: 'right', marginRight: '15px'}}>
-                <Pagination s donationsPerPage={donationsPerPage} totalDonations={donationList.length}
-                            paginate={paginate}/>
-
-
-            </div>
+            <Pagination donationsPerPage={donationsPerPage} totalDonations={donationList.length}
+                        paginate={paginate}/>
         </div>
 
     )

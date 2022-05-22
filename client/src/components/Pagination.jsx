@@ -7,8 +7,8 @@ function Pagination({donationsPerPage, totalDonations, paginate}) {
         pageNumbers.push(i);
     }
     return (
-        <nav>
-            <ul className="pagination">
+        <nav className={"mt-5"}>
+            <ul className="pagination" style={{justifyContent: "center"}}>
                 {pageNumbers.map((number) => {
                     return (
                         <li key={number} className="page-item">

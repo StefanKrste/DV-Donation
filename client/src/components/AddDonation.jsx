@@ -60,7 +60,7 @@ const AddDonation = () => {
                 <div className="donacija">
                     <label>Description of the donation</label>
                     <div>
-                        <input type='text' name="description" className='forma' required
+                        <textarea rows="5" name="description" className='textArea ' cols="56" required
                                value={description} onChange={(e) =>
                             setDescription(e.target.value)}/>
                     </div>
@@ -84,7 +84,6 @@ const AddDonation = () => {
                     </div>
                 </div>
 
-                <div><p className="prazno"></p></div>
                 <div className="donacija">
                     <label>Upload image</label>
                     <input className="form-control forma" style={{margin: '2px'}} type="file" accept="image/*" name="image" required
@@ -94,11 +93,10 @@ const AddDonation = () => {
                            }}/>
                 </div>
 
-                <div><p className="prazno"></p></div>
                 <button style={{marginTop: '30px'}} className="btn btn-secondary" type="submit">Submit donation</button>
             </form>
 
-            <label style={{color: 'green'}} className='m-3'>{labelText}</label>
+            <label style={{color: 'green'}} className='m-3'><b>{labelText}</b></label>
         </div>
     )
 }

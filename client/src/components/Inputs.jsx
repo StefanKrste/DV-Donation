@@ -87,17 +87,17 @@ const Inputs = ({currentId, currentdonationAddress}) => {
                 </div>
 
                 <div className="donacija">
-                    <label>Message of donation</label>
+                    <label>Donation message</label>
                     <div>
-                        <input className='forma2' name="message" type="text" onChange={handleInputChange} required/>
+                        <textarea rows="3" name="message" className='textArea' cols="62" onChange={handleInputChange} required />
 
                     </div>
                     <p style={{lenght: '10px'}}></p>
                 </div>
 
                 <div>
-                    {isLoading ? <label className="text-primary">Transaction is in process</label> : (
-                        <button className="btn btn-secondary mb-2" type="submit">Send now</button>)}
+                    {isLoading ? <label className="text-primary mb-3"><b>Transaction is in process</b></label> : (
+                        <button className="btn btn-secondary mb-3" type="submit">Send now</button>)}
                 </div>
             </form>
         </div>

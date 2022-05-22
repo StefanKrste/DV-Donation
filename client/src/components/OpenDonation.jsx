@@ -26,7 +26,8 @@ function OpenDonation() {
                             <img alt='Embedded Image' src={`data:image;base64,${val.slika}`} height="250px"
                                  width="250px"/>}
                             <p style={{marginTop: '25px'}}>{val.opis_donacija}</p>
-                            <p>{val.email}</p>
+                            <p style={{color: 'brown'}}>Donation Addr: {val.adresa}</p>
+                            <p>Contact: {val.email}</p>
                             <Inputs currentId={val.id} currentdonationAddress={val.adresa}/>
                         </div>
                         <div className='gallery4'>
