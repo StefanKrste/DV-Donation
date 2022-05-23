@@ -17,7 +17,7 @@ $ npm install react-router-dom
 
 ## Run
 
-To run the server, navigate to `server`
+To run the server, navigate to `server` and:
 
 ```
 $ npm run devStart
