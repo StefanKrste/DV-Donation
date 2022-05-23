@@ -1,25 +1,58 @@
-The application is a platform on which donation actions can be started and donations can be made. To start or send money (ETH) you need to have MetaMask installed.
+DV-Donation is a fundraising platform running on top of the MetaMask cryptocurrency wallet to execute transcations on the Etherium blockchain.
 
-# DV-Donation
+## Build
 
-install Node.js https://nodejs.org/en/download/
+Navigate to the server directory and run: 
 
-..\DV-Donation\server><br />
-  npm install nodemon<br />
-  Start - npm run devStart<br />
+```
+$ npm install nodemon
+```
 
-..\DV-Donation\client><br />
-  npm install<br />
-  npm install react-router-dom<br />
-  Start - npm run dev<br />
+Navigate to client and run:
 
-https://metamask.io/download/ - MetaMask
-1. Go to setting 
-2. Advanced 
-3. Show test networks "checkbox enabled" 
-4. Choose ropsten test network 
+```
+$ npm install
+$ npm install react-router-dom
 
-  ![image](https://user-images.githubusercontent.com/67862991/169051704-5577cf0b-5a67-4530-91b5-50493108c153.png)
+```
+
+## Run
+
+To run the server, navigate to `server`
+
+```
+$ npm run devStart
+```
+
+To run the client, navigate to `client` and:
+
+```
+$ npm run dev
+```
   
-https://faucet.egorfine.com/ - Ropsten ETH <br />
-https://www.alchemy.com/ - Deploy smart contract with Hardhat ----> more https://docs.alchemy.com/alchemy/tutorials/hello-world-smart-contract <br />
+## Setup MetaMask:
+
+   1. Download MetaMask https://metamask.io/download/<br/>
+   2. Go to setting <br/>
+   3. Advanced <br/>
+   4. Show test networks "checkbox enabled" <br/>
+   5. Choose ropsten test network <br/>
+  
+![image](https://user-images.githubusercontent.com/67862991/169896335-af862e61-dbf1-4c2e-91f4-a02449f04e88.png)
+
+### Get Ropsten ETH - https://faucet.egorfine.com/
+
+## Dependencies
+
+- API (ETH to USD)  - https://www.coingecko.com/en/api/documentation (coins/markets)
+- Install Node.js - https://nodejs.org/en/download/
+
+## Deploy
+
+Smart contract with Hardhat https://www.alchemy.com/ (see [Doc](https://docs.alchemy.com/alchemy/tutorials/hello-world-smart-contract))
+
+## SQL
+
+Import .sql file from DV-Donation/SQL-DB/ in you DB
+Default user: "root", password: "root"
+
