@@ -13,7 +13,6 @@ Navigate to client and run:
 ```
 $ npm install
 $ npm install react-router-dom
-
 ```
 
 ## Run
