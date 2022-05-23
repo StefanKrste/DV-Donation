@@ -52,6 +52,6 @@ Smart contract with Hardhat https://www.alchemy.com/ (see [Doc](https://docs.alc
 
 ## SQL
 
-Import .sql file from DV-Donation/SQL-DB/ in you DB
+Import .sql file from DV-Donation/SQL-DB/ in your DB
 Default user: "root", password: "root"
 
