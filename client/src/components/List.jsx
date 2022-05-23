@@ -10,8 +10,8 @@ const ListElement = ({addressTo, addressFrom, timestamp, message, name, amount, 
             <p className="text" style={{fontSize: '20px'}}><b>From: {name}</b></p>
             <p className="text2" style={{color: '#208B44'}}><b>Amount: {amount} ETH</b></p>
             <p className="text2">Message: {message}</p>
-            <p className="text2 font-weight-bold ">Addr: {addressFrom}</p>
             <p >{timestamp}</p>
+            <p className="text2 "style={{fontSize: '13px',textAlign:'center'}} >Addr: {addressFrom}</p>
         </div>
     );
 };
